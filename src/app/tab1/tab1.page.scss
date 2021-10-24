@@ -1,0 +1,52 @@
+#container {
+    @media (max-width: 779px) and (min-width: 0px) {
+      column-count: 2;
+    }
+   
+    @media (max-width: 1039px) and (min-width: 780px) {
+      column-count: 3;
+    }
+   
+    @media (max-width: 1299px) and (min-width: 1040px) {
+      column-count: 4;
+    }
+   
+    @media (min-width: 1300px) {
+      column-count: 5;
+    }
+   
+    column-gap: 0px;
+  }
+.collection{
+    display: inline-block;
+    padding: 12px 12px 28px 12px;
+    border-radius: 12px;
+    cursor: zoom-in;
+    
+    animal{
+        border-radius: 12px;
+    }
+    ion-button{
+        display: none;
+        position: absolute;
+        top: 20px;
+    }
+}
+.collection:hover{
+    animation: tapAnimation 0.25s cubic-bezier(0.31, 1, 0.34, 1) forwards;
+    ion-button{
+        display: block;
+        
+    }
+}
+
+@keyframes tapAnimation{
+    0%{
+        opacity: 1;
+        transform: scale(0.96);}
+        100%{
+            opacity: 1;
+            background: rgba(0,0,0,0.05);
+            transform: scale(1);
+        }
+}

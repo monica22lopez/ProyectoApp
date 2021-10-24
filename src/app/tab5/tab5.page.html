@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="logo-pinterest" slot="end" color="danger" style="height: 50px; width: 50px;"></ion-icon>
+    <ion-button  style="height: 50px; width: 65px;" color="dark" shape="round">Todo</ion-button>
+    <ion-title>
+       </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <h4 class="titulo1" >ACERCA DE PINTEREST </h4>
+    <ion-item *ngFor="let item of data let i=index">
+      <ion-label>{{i +1}}-Es un lugar donde poder compartir fotos,
+         todo lo que encuentres en Internet.</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <h4 class="titulo1" > GALERIA DE IMAGENES</h4>
+    <H5 class="til">CLICK PARA VER CONTENIDO</H5>
+    <ion-item *ngFor="let l of listados" [routerLink]="l.redirectTo" (click)="mostrar()">
+      <ion-icon slot="start" color="danger" [name]='l.icon'> </ion-icon>
+      <ion-button expand="block" color="dark"> {{ l.name }}</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <H2 class="titulo1">USUARIOS ACTIVOS DE PINTEREST </H2>
+<ion-list>
+    <!-- Para diferentes iconos -->
+    <!-- <ion-item  *ngFor="let a of Avatar"> -->
+ <ion-item  *ngFor="let item of [1,1,1,1]"> 
+<ion-avatar slot="end">
+ 
+ <!-- <img [src]="a.img"/>   -->
+<img src="assets/icon/imagen.png" alt="">
+</ion-avatar>
+ <ion-label>Pinterest tiene 442 millones de usuarios activos </ion-label>
+ </ion-item>
+  
+
+  </ion-list>
+</ion-content>

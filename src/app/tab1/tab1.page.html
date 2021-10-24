@@ -1,17 +1,97 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-icon name="logo-pinterest" slot="end" color="danger" style="height: 50px; width: 50px;"></ion-icon>
+    
+    <ion-button  style="height: 50px; width: 65px;" color="dark" shape="round">Todo</ion-button>
     <ion-title>
-      Tab 1
-    </ion-title>
+       </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+ 
+
+
+<ion-content [fullscreen]="true">
+
+<ion-item>
+  
+    <ion-label>Dark theme</ion-label>
+
+<ion-toggle slot="end" (ionChange)='toggleTheme($event)'></ion-toggle>
+ 
+
+</ion-item>
+
+
+
+
+
+
+
+
+
+  <div id="container">
+    <ion-card class="collection" *ngFor="let img of animales">
+      <ion-button>
+
+        <ion-icon slot="start" name="bookmark">bookmark</ion-icon>
+      </ion-button>
+      <img src="assets/img/{{img.img}}" alt="">
+     
+    </ion-card>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button>
+      
+       <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+<ion-fab-list side="start">
+ 
+  <ion-card>
+    <ion-item>
+    
+      <ion-icon name="logo-pinterest" slot="start" color="danger" style="height: 20px; width: 20px;"></ion-icon>
+       <ion-label>Hazte con nuestro boton de navegacion para guardar ideas incluso mas rapido</ion-label>
+      <!-- <ion-button fill="outline" slot="end">Hazte con nuestro boton de navegacion para guardar ideas incluso mas rapido</ion-button> -->
+    </ion-item>
+  </ion-card>
+  </ion-fab-list>
+
+  
+</ion-fab>
+
+
+
+
 </ion-content>
+
+
+ 
+ 

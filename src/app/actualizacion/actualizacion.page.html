@@ -1,0 +1,54 @@
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-icon name="logo-pinterest" slot="end" color="danger" style="height: 50px; width: 50px;"></ion-icon>
+      <ion-button   style="height: 50px; width: 65px;" color="dark" shape="round">Todo</ion-button>
+      <ion-title>
+         </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+  <ion-content >
+    <!-- Segment buttons with text and click listener -->
+     <ion-segment >
+      <ion-segment-button  [routerLink]="['/actualizacion']">
+        <ion-label>Actualizacion</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/']">
+        <ion-label>Mensajeria</ion-label>
+        
+      </ion-segment-button>
+      
+   </ion-segment>
+
+    <ion-grid>
+      <h2 class="titulo">Empapelado. Diseño de bordado a mano y mas ideas que has estado buscando.</h2>
+      <h5 class="h5">Hace 1h</h5>
+  <ion-row>
+    <ion-col size="4" *ngFor="let imagen of imagenes">
+    
+      <h4 class="titulo"></h4>
+      <img class="imagenes" src="{{imagen}}" >
+      
+  
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<ion-grid>
+  <h2 class="titulo">Tienes 17 pines nuevos esperandote.</h2>
+  <h5 class="h5">Hace 1d</h5>
+<ion-row>
+<ion-col size="4" *ngFor="let imagenes of imagen">
+
+  <h4 class="titulo"></h4>
+  <img class="imagenes" src="{{imagenes}}" >
+  
+
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

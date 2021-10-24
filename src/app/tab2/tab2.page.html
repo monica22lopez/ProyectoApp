@@ -1,17 +1,117 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-icon  name="logo-pinterest" slot="end" color="danger" style="height: 50px; width: 50px;"></ion-icon>
+    <ion-button (click)="irPagina()" style="height: 50px; width: 65px;" color="dark" shape="round">Todo</ion-button>
     <ion-title>
-      Tab 2
-    </ion-title>
+       </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-content [fullscreen]="true" class="card-background-page">
+
+    <ion-searchbar></ion-searchbar>
+
+
+
+ <br>
+
+ <h2 class="titulo1">INSPIRACION DIARIA</h2>
+ 
+ <ion-slides [options]="option" class="ion-margin-top">
+  <ion-slide>
+    <ion-card class="slide">
+      <img src="assets/img/nuevo1.jpg">
+    </ion-card>
+  </ion-slide>
+ 
+  <ion-slide>
+    <ion-card class="slide">
+      <img src="assets/img/nuevo2.jpg">
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card class="slide">
+      <img src="assets/img/nuevo3.jpg">
+    </ion-card>
+  </ion-slide>
+ 
+</ion-slides>
+
+
+<h2 class="titulo">IDEAS PARA TI</h2>
+ 
+<ion-grid>
+<ion-row>
+<ion-col size="6" *ngFor="let imagen of imagenes">
+<ion-card class="card">
+ <img class="imagenes" src="{{imagen}}" >
+  <div class="card-title">POPULARES PINTEREST</div>
+  </ion-card>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+
+
+<h2 class="titulo">FONDOS POPULARES DE PINTEREST</h2>
+ 
+<ion-grid>
+<ion-row>
+<ion-col size="6" *ngFor="let imagens of imagen">
+<ion-card class="card">
+ <img class="imagenes" src="{{imagens}}" >
+  <div class="card-title">FONDOS PINTEREST</div>
+  </ion-card>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" *ngFor="let imagen of imagenes">
+      <h2 class="titulo">Ideas para ti Populares en Pinterest</h2>
+      <h4 class="titulo"></h4>
+      <img class="imagenes" src="{{imagen}}" >
+      
+      <h4 class="titulo">Fondos de pantalla</h4>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ion-content>

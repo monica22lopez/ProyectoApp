@@ -1,0 +1,71 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-avatar>
+      <img src="assets/icon/user.PNG" />
+    </ion-avatar>
+    <ion-title class="title">Monica Henriquez</ion-title>
+    <ion-icon class="icon" slot="end"name="ellipsis-horizontal-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<br><br>
+<ion-content>
+
+  <ion-button color="danger" class="btn" (click)="presentAlert()" expand="block">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+   </ion-button>
+   
+  <br><br>
+  <ion-grid>
+    <ion-row>
+      <ion-col >
+        <ion-searchbar animated></ion-searchbar>
+       
+      </ion-col>
+      <ion-icon class="icon" name="add-circle-outline"></ion-icon>
+    </ion-row>
+    
+  </ion-grid>
+
+  <h3 class="h3">
+   Imagenes guardados de Monica Henriquez
+   <ion-icon name="woman-outline"></ion-icon>
+  </h3>
+  <div id="container">
+    <ion-card class="collection" *ngFor="let img of animales">
+      <ion-button>
+
+        <ion-icon slot="start" name="save">bookmark</ion-icon>
+      </ion-button>
+      <img src="assets/img/{{img.img}}" alt="">
+     
+    </ion-card>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+   
+  
+</ion-content>
+
+<ion-footer color="Dark">
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <p class="p">Perfil: Monica Maria Lopez Henriquez</p>
+  </ion-toolbar>
+</ion-footer>

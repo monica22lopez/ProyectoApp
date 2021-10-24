@@ -1,17 +1,70 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-icon name="logo-pinterest" slot="end" color="danger" style="height: 50px; width: 50px;"></ion-icon>
+      <ion-button  style="height: 50px; width: 65px;" color="dark" shape="round">Todo</ion-button>
+      <ion-title>
+         </ion-title>
     </ion-toolbar>
   </ion-header>
+  
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-</ion-content>
+<ion-content [fullscreen]="true">
+<!-- Segment buttons with text and click listener -->
+ <ion-segment >
+  <ion-segment-button class="boton" [routerLink]="['/../../actualizacion']">
+    <ion-label>Actualizacion</ion-label>
+  </ion-segment-button>
+  <ion-segment-button class="boton" >
+    <ion-label>Mensajeria</ion-label>
+    
+  </ion-segment-button>
+  
+  
+ 
+  
+</ion-segment>
+ <ion-grid>
+
+  <ion-row *ngFor="let message of messages">
+
+<ion-col size="9" *ngIf="currentUser !== message.user" class="message other-message">
+ <b>{{message.user }}</b><br>
+ <span>{{message.msg }}</span>
+ <div class="time" text-right><br>
+  {{message.createdAt | date: 'short' }}</div>
+</ion-col>
+
+<ion-col offset="3" size="9" *ngIf="currentUser == message.user" class="message my-message">
+  <b>{{message.user }}</b><br>
+  <span>{{message.msg }}</span>
+  <div class="time" text-right><br>
+   {{message.createdAt | date: 'short' }}</div>
+ </ion-col>
+</ion-row>
+</ion-grid>
+ 
+  </ion-content>
+
+
+    <ion-footer>
+    <ion-toolbar color="light">
+      <ion-row align-items-center  no-padding>
+        <ion-col size="10">
+          <textarea autosize maxRows="4" [(ngModel)]="newMsg" class="message-input"></textarea>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button expand="block" fill="clear"  color="primary" [disabled]="newMsg === ''" class="msg-btn"
+          (click)="sendMessage()"> 
+            <ion-icon name="paper-plane-outline" slot="icon-only"></ion-icon>
+            
+          </ion-button>
+
+
+        </ion-col>
+        </ion-row>
+         </ion-toolbar>
+  </ion-footer> 
+   
+
+
